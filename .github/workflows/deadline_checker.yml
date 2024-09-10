@@ -3,7 +3,7 @@ name: Deadline Status Checker
 on:
   schedule:
     # Runs at 00:00 UTC every day
-    - cron: '15 23 * * *'
+    - cron: '27 7 * * *'
   workflow_dispatch:
 
 jobs:
