@@ -10,8 +10,7 @@ DB_NAME = "AIPT_DATA_MANAGEMENT_SYSTEM"
 DB_PORT = "3306"
 
 # Database connection setup
-DATABASE_URL = f"mysql+pymysql://root:123456@localhost/sys"
-  # Change according to your database
+DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
