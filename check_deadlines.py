@@ -10,10 +10,10 @@ DB_NAME = "AIPT_DATA_MANAGEMENT_SYSTEM"
 DB_PORT = "3306"
 
 # Database connection setup
-MySQL_URL = f"mysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-db_engine = create_engine(MySQL_URL, pool_size=100, pool_recycle=3600, pool_pre_ping=True)
+DATABASE_URL = f"mysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
   # Change according to your database
-Session = sessionmaker(bind=db_engine)
+engine = create_engine(DATABASE_URL)
+Session = sessionmaker(bind=engine)
 session = Session()
 
 # Current date
