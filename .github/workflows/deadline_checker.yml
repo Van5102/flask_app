@@ -21,7 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install sqlalchemy psycopg2  # Assuming PostgreSQL, change if using another DB
+          pip install flask sqlalchemy psycopg2  # Updated to include Flask
+          # Add any other necessary packages here
 
       - name: Check and update deadlines
         run: python check_deadlines.py
