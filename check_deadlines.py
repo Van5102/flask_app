@@ -3,10 +3,17 @@ from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from src.models import Project  # Import your model here
 
+DB_USER = "dev-test"
+DB_PASS = "aipt2024"
+DB_HOST = "192.168.3.2"
+DB_NAME = "AIPT_DATA_MANAGEMENT_SYSTEM"
+DB_PORT = "3306"
+
 # Database connection setup
-DATABASE_URL = "mysql+pymysql://root:123456@localhost/sys"  # Change according to your database
-engine = create_engine(DATABASE_URL)
-Session = sessionmaker(bind=engine)
+MySQL_URL = f"mysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+db_engine = create_engine(MySQL_URL, pool_size=100, pool_recycle=3600, pool_pre_ping=True)
+  # Change according to your database
+Session = sessionmaker(bind=db_engine)
 session = Session()
 
 # Current date
