@@ -20,7 +20,7 @@ def get_projects():
         })
     return jsonify(project_data)
 
-@api.route('/api/check_deadlines', methods=['GET'])
+@api.route('/api/check_deadlines', methods=['POST'])
 def run_task():
     # Khi nhận được tín hiệu từ GitHub, chạy script trên máy nội bộ
     subprocess.run(["D:/code/Back_end_test/flask_app/check_deadlines.py"])
