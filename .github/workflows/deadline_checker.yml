@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Send request to local server
         run: |
-          curl -X POST http://192.168.3.12:3000/run_task
+          curl -X POST http://192.168.3.12:3000/api/check_deadlines
